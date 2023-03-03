@@ -20,7 +20,7 @@ function Footer() {
                   </svg>
                 </Link>
               </div>
-              <div className="text-gray-400">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div>
+              <div className="text-gray-400"> Market De Black is a platform that enables seamless buying and selling of goods and services between individuals, commonly referred to as C2C. Our app provides a secure and reliable environment for buyers and sellers to transact without the need for intermediaries. Whether you are looking to sell or purchase a wide range of products, our black market app offers a hassle-free experience, with quick and efficient transactions that prioritize privacy and anonymity. Trust us to be your go-to platform for all your C2C needs.</div>
             </div>
 
             {/* 2nd, 3rd and 4th blocks */}
@@ -135,7 +135,7 @@ function Footer() {
             </ul>
 
             {/* Copyrights note */}
-            <div className="text-gray-400 text-sm mr-4">&copy; Cruip.com. All rights reserved.</div>
+            <div className="text-gray-400 text-sm mr-4">&copy; Market De black  All rights reserved.</div>
 
           </div>
 
