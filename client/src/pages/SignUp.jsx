@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import { signup } from '../Api/signup';
 
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import Banner from '../partials/Banner';
 
 function SignUp() {
+const[firstName, setfirstName] = useState("");
+const[lastName, setlastName] = useState("");
+const[email, setEmail] = useState("");
+const[password, setPassword] = useState("");
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -52,19 +58,19 @@ function SignUp() {
                 <form>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
-                      <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="full-name">Full Name <span className="text-red-600">*</span></label>
+                      <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="full-name">First Name <span className="text-red-600">*</span></label>
                       <input id="full-name" type="text" className="form-input w-full text-gray-300" placeholder="First and last name" required />
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
-                      <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="company-name">Company Name <span className="text-red-600">*</span></label>
+                      <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="company-name">Last Name <span className="text-red-600">*</span></label>
                       <input id="company-name" type="text" className="form-input w-full text-gray-300" placeholder="Your company or app name" required />
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
-                      <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="email">Work Email <span className="text-red-600">*</span></label>
+                      <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="email">Email <span className="text-red-600">*</span></label>
                       <input id="email" type="email" className="form-input w-full text-gray-300" placeholder="you@yourcompany.com" required />
                     </div>
                   </div>
