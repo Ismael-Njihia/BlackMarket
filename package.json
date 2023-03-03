@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "aos": "^2.3.4",
+    "react-router-dom": "^6.8.2",
+    "react-transition-group": "^4.4.5"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}
