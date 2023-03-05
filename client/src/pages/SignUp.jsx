@@ -7,13 +7,38 @@ import PageIllustration from '../partials/PageIllustration';
 import Banner from '../partials/Banner';
 
 function SignUp() {
-const[firstName, setfirstName] = useState("");
-const[lastName, setlastName] = useState("");
+const[firstname, setfirstname] = useState("");
+const[lastname, setlastname] = useState("");
 const[email, setEmail] = useState("");
 const[password, setPassword] = useState("");
 
+const handleSignup = async (event)=>{
+  event.preventDefault();
+
+  try{
+    const user = {firstname, lastname, email, password};
+    const response = await signup(user)
+    console.log(response)
+    console.log(response.status)
+    console.log(response.user)
+
+    if(response.status === 200){
+      console.log("user authenticated")
+    }
+    else{
+      console.log(response.statusText)
+
+    }
+      
+    }catch(error){
+      console.log(error)
+    }
+  }
+
+
+
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div className="flex flex-col min-h-screen overflow-hidden" >
 
       {/*  Site header */}
       <Header />
@@ -55,29 +80,46 @@ const[password, setPassword] = useState("");
                   <div className="text-gray-400">Or, register with your email</div>
                   <div className="border-t border-gray-700 border-dotted grow ml-3" aria-hidden="true"></div>
                 </div>
-                <form>
+
+
+                <form onSubmit={handleSignup}>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="full-name">First Name <span className="text-red-600">*</span></label>
-                      <input id="full-name" type="text" className="form-input w-full text-gray-300" placeholder="First and last name" required />
+                      <input id="full-name"
+                       name="firstname" 
+                       value={firstname} onChange={(event)=>setfirstname(event.target.value)}
+                        type="text" className="form-input w-full text-gray-300" placeholder="name" required />
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="company-name">Last Name <span className="text-red-600">*</span></label>
-                      <input id="company-name" type="text" className="form-input w-full text-gray-300" placeholder="Your company or app name" required />
+                      <input id="company-name"
+                       name="lastName" 
+                       value={lastname} 
+                       onChange={(event)=>setlastname(event.target.value)} type="text" className="form-input w-full text-gray-300" placeholder="Enter your last name" required />
                     </div>
                   </div>
+
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="email">Email <span className="text-red-600">*</span></label>
-                      <input id="email" type="email" className="form-input w-full text-gray-300" placeholder="you@yourcompany.com" required />
+                      <input id="email" 
+                      name="email" 
+                      value={email} 
+                      onChange={(event)=>setEmail(event.target.value)}
+                       type="email" className="form-input w-full text-gray-300" placeholder="Your Email" required />
                     </div>
+
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="password">Password <span className="text-red-600">*</span></label>
-                      <input id="password" type="password" className="form-input w-full text-gray-300" placeholder="Password (at least 10 characters)" required />
+                      <input id="password"  
+                      type="password" 
+                      name="password" 
+                      value={password} onChange={(event)=>setPassword(event.target.value)}  className="form-input w-full text-gray-300" placeholder="Password (at least 10 characters)" required />
                     </div>
                   </div>
                   <div className="text-sm text-gray-500 text-center">
@@ -85,7 +127,7 @@ const[password, setPassword] = useState("");
                                 </div>
                   <div className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3">
-                      <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Sign up</button>
+                      <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full" type='submit'>Sign up</button>
                     </div>
                   </div>
                 </form>
@@ -105,5 +147,7 @@ const[password, setPassword] = useState("");
     </div>
   );
 }
+
+
 
 export default SignUp;
