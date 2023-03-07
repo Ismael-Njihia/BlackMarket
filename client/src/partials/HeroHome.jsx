@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Modal from '../utils/Modal';
-
-import BuySell from '../images/BuySell.png';
 import buysell2 from '../images/buysell2.png';
+import { Link } from 'react-router-dom';
 
 function HeroHome() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
@@ -46,14 +45,14 @@ function HeroHome() {
             </p>
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
               <div data-aos="fade-up" data-aos-delay="400">
-                <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">
+                <Link to='/signup' className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">
                   Get started
-                </a>
+                </Link>
               </div>
               <div data-aos="fade-up" data-aos-delay="600">
-                <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">
+                <Link to = '/products' className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">
                   View Products
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -63,9 +62,9 @@ function HeroHome() {
             <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
               <img className="mx-auto" src={buysell2} width="1024" height="504" alt="Hero" />
               
-              <a
+              <Link
                 className="absolute group"
-                href="#0"
+                to='/signup'
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
@@ -90,7 +89,7 @@ function HeroHome() {
                     d="M52 44a.999.999 0 00-.427-.82l-10-7A1 1 0 0040 37V51a.999.999 0 001.573.82l10-7A.995.995 0 0052 44V44c0 .001 0 .001 0 0z"
                   />
                 </svg> */}
-              </a>
+              </Link>
             </div>
 
             {/* Modal */}
