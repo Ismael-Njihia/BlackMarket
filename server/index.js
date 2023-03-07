@@ -15,7 +15,7 @@ const port = process.env.PORT || 5000;
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '7507',
+    password: 'David001@',
     database: 'BlackMarket'
 });
 
@@ -91,8 +91,6 @@ app.post('/signup', (req, res)=>{
     //Create a username by combining first name and random number
     const username = `${firstname}${randomNumber}`;
     const accounType = 'Basic'
-
-   
 
     const sqlInsert = `INSERT INTO users (username, firstname, lastname, email, password, accounType) VALUES ('${username}','${firstname}','${lastname}','${email}','${password}', '${accounType}')`;
     
